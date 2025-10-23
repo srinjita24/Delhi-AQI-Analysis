@@ -8,12 +8,12 @@ import os
 url = "https://drive.google.com/uc?id=1DqkaLn2MDOZwXKoZgqaPdpSWE4sMJOSu&export=download"
 df = pd.read_csv(url)
 
-print("\n✅ Dataset loaded successfully!\n")
+print("\n Dataset loaded successfully!\n")
 print(df.head())
 print(df.info())
 
 
-print("\n🧹 Cleaning data...")
+print("\n Cleaning data...")
 
 # Convert 'date' column to datetime
 df['date'] = pd.to_datetime(df['date'], errors='coerce')
@@ -24,7 +24,7 @@ df.fillna(df.mean(), inplace=True)
 print("Data cleaned successfully!")
 
 
-print("\n📊 Generating correlation heatmap...")
+print("\n Generating correlation heatmap...")
 
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
@@ -33,10 +33,10 @@ plt.title("Correlation of Pollutants in Delhi AQI Data")
 # Save and show
 plt.savefig("correlation_heatmap.png")
 plt.show(block=True)
-print("✅ Saved: correlation_heatmap.png")
+print(" Saved: correlation_heatmap.png")
 
 
-print("\n🍂 Performing seasonal AQI analysis...")
+print("\n Performing seasonal AQI analysis...")
 
 df['Month'] = df['date'].dt.month
 df['Season'] = df['Month'].apply(lambda x: 
@@ -55,10 +55,10 @@ plt.ylabel("Average PM2.5 Concentration")
 plt.title("Seasonal Variation of PM2.5 in Delhi")
 plt.savefig("seasonal_pm25_bar.png")
 plt.show(block=True)
-print("✅ Saved: seasonal_pm25_bar.png")
+print(" Saved: seasonal_pm25_bar.png")
 
 
-print("\n📈 Plotting pollutant trends over time...")
+print("\n Plotting pollutant trends over time...")
 
 pollutants = ['co','no','no2','o3','so2','pm2_5','pm10','nh3']
 
@@ -74,22 +74,23 @@ plt.legend()
 plt.tight_layout()
 plt.savefig("pollutant_trends.png")
 plt.show(block=True)
-print("✅ Saved: pollutant_trends.png")
+print(" Saved: pollutant_trends.png")
 
 
-print("\n⚠️ Identifying hazardous pollution days...")
+print("\n Identifying hazardous pollution days...")
 
 hazardous_days = df[df['pm2_5'] > 250]
 print(f"Number of very high PM2.5 days: {len(hazardous_days)}")
 
 cols_to_save = ['date','pm2_5','pm10','no2','co']
 hazardous_days[cols_to_save].to_csv("hazardous_days.csv", index=False)
-print("✅ Saved: hazardous_days.csv")
+print(" Saved: hazardous_days.csv")
 
 
-print("\n🎯 Analysis Complete! All graphs displayed and saved.")
+print("\n Analysis Complete! All graphs displayed and saved.")
 print("Check your folder for:")
 print("   - correlation_heatmap.png")
 print("   - seasonal_pm25_bar.png")
 print("   - pollutant_trends.png")
 print("   - hazardous_days.csv")
+
