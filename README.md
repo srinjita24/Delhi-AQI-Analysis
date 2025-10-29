@@ -1,8 +1,8 @@
 # Data Analysis Internship Projects – ShadowFox
 
-This repository contains the projects completed during my Data Analysis Internship at **ShadowFox**.
+This repository contains the projects completed during my Data Analysis Internship at ShadowFox.
 
-## 📊 Projects Overview
+## Projects Overview
 
 ### 1. Seaborn and Pygal Visualization Report
 - Demonstrated data visualization using Python libraries **Seaborn** and **Pygal**.
@@ -18,7 +18,7 @@ This repository contains the projects completed during my Data Analysis Internsh
 
 ---
 
-## 🔗 Repository Purpose
+##  Repository Purpose
 This repository combines all internship works to showcase my skills in:
 - Data preprocessing
 - Exploratory Data Analysis (EDA)
