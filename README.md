@@ -1,5 +1,4 @@
 # Data Analysis Internship Projects – ShadowFox
-
 This repository contains the projects completed during my Data Analysis Internship at ShadowFox.
 
 ## Projects Overview
